@@ -25,8 +25,7 @@ public class C360BuyerPlugin {
     //Methods
     public void C360DarazPluginData(WebDriver driver)
     {
-        WebDriverWait wait = new WebDriverWait(driver, 60);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='member-name']")));
+        XSpace_Wait.waitforelement().until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='member-name']")));
         boolean Bname = BuyerName.getText().isEmpty();
         if(Bname == false)
         {

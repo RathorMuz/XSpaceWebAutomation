@@ -14,27 +14,28 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class XSpace_Setup {
+public class XSpace_Setup extends XSpace_Wait{
 
     public XSpace_Setup(WebDriver driver) {
         XSpace_Wait.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    public static WebDriver driver;
+    //public static WebDriver driver;
 
     public WebDriver driver() throws InterruptedException, IOException {
 
-        //System.setProperty("webdriver.chrome.driver","/Users/muzammilqamar/Downloads/chromedriver_mac_arm64/chromedriver");
+        System.setProperty("webdriver.chrome.driver","/Users/muzammilqamar/Downloads/chromedriver-mac-arm64/chromedriver");
         String os = System.getProperty("os.name").toLowerCase();
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
         System.out.println("\n\nCurrent OS is: "+os+"\n\n");
         if(os.equalsIgnoreCase("mac os x")) {
-            WebDriverManager.chromedriver().setup();
-            ChromeDriverService service = ChromeDriverService.createDefaultService();
+            //WebDriverManager.chromedriver().setup();
+            //ChromeDriverService service = ChromeDriverService.createDefaultService();
             ChromeOptions options = new ChromeOptions();
             //options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080", "--window-position=0,0", "--remote-allow-origins=*");
-            driver = new ChromeDriver(service, options);
+            //driver = new ChromeDriver(service, options);
+            driver = new ChromeDriver(options);
         }
         else {
 
@@ -60,14 +61,13 @@ public class XSpace_Setup {
         options.addArguments("--headless");
         //options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080", "--window-position=0,0");
         options.setExperimentalOption("excludeSwitches", Arrays.asList("disable-popup-blocking"));
-        ChromeDriver driver = new ChromeDriver(options);
+        ChromeDriver driver = new ChromeDriver(options);*/
 
         //driver = new ChromeDriver();
-        driver.manage().window().maximize();*/
+        driver.manage().window().maximize();
 
         driver.get("https://xspace.daraz.com/");
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='entry-link']")));
+        XSpace_Wait.waitforelement().until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='entry-link']")));
         driver.findElement(By.xpath("//*[@class='entry-link']")).click();
         driver.findElement(By.id("account")).sendKeys("muhammad.muzzamilq@alibaba-inc.com");
         driver.findElement(By.id("password")).sendKeys("Sum23muz26");
