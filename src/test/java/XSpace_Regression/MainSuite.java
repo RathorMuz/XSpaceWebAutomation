@@ -88,7 +88,7 @@ public class MainSuite {
         OpenCustomerCenter occ = new OpenCustomerCenter(driver);
         occ.SearchbyItemID(driver);
     }
-    @Test(priority = 9)
+    @Test(priority = 9,retryAnalyzer = Retry.class)
     public void SearchSOP () throws InterruptedException {
         OpenCustomerCenter occ = new OpenCustomerCenter(driver);
         occ.SearchSOP(driver);
@@ -103,12 +103,12 @@ public class MainSuite {
         CaseCenter cc = new CaseCenter(driver);
         cc.clickCaseCenterIcon(driver);
     }
-    @Test(priority = 12)
+    @Test(priority = 12,retryAnalyzer = Retry.class)
     public void C360DarazPluginData () {
         C360BuyerPlugin bp = new C360BuyerPlugin(driver);
         bp.C360DarazPluginData(driver);
     }
-    @Test(priority = 13)
+    @Test(priority = 13,retryAnalyzer = Retry.class)
     public void CreateCase () throws InterruptedException {
         CaseCenter cs = new CaseCenter(driver);
         cs.CreateCase(driver);

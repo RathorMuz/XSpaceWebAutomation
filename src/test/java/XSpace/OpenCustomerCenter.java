@@ -618,7 +618,7 @@ public class OpenCustomerCenter {
         Thread.sleep(3000);
         OrderSelector.sendKeys("147019663466881");
         Allure.step("Enter Order ID");
-        OrderSelector.sendKeys(Keys.RETURN);
+        //OrderSelector.sendKeys(Keys.RETURN);
         Thread.sleep(2000);
         OKButton.click();
         Allure.step("Click on OK button");
