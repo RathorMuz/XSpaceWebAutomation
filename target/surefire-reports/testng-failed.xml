@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="Failed suite [Surefire suite]" verbose="0">
+  <test thread-count="1" name="Surefire test(failed)" verbose="0">
+    <classes>
+      <class name="XSpace_Regression.MainSuite">
+        <methods>
+          <include name="SearchbyItemID"/>
+          <include name="BuyerSelection"/>
+          <include name="SearchbyOrderID"/>
+          <include name="SelectBuyer"/>
+          <include name="SearchVoucher"/>
+          <include name="SearchbyPhoneNumber"/>
+          <include name="clickCaseCenterIcon"/>
+          <include name="C360DarazPluginData"/>
+          <include name="clickCustomerCenterIcon"/>
+          <include name="SearchSOP"/>
+          <include name="XSpace_Setup"/>
+          <include name="Browser_close"/>
+          <include name="GetWalletInfo"/>
+          <include name="SearchByEmail"/>
+          <include name="SearchbyUserID"/>
+          <include name="CreateCase"/>
+          <include name="TakeScreenshot"/>
+        </methods>
+      </class> <!-- XSpace_Regression.MainSuite -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->
