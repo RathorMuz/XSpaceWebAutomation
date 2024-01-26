@@ -88,7 +88,7 @@ public class MainSuite {
         OpenCustomerCenter occ = new OpenCustomerCenter(driver);
         occ.SearchbyItemID(driver);
     }
-    @Test(priority = 9,retryAnalyzer = Retry.class)
+    @Test(priority = 9)
     public void SearchSOP () throws InterruptedException {
         OpenCustomerCenter occ = new OpenCustomerCenter(driver);
         occ.SearchSOP(driver);

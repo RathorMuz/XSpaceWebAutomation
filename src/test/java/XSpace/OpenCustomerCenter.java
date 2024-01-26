@@ -101,7 +101,7 @@ public class OpenCustomerCenter {
     public WebElement ItemID;
     @FindBy(css= "div ul li:nth-child(1) div main div div button.ant-btn.xsop-sdk-2-10-5-plugins-selectors-default--btn.ant-btn-primary")
     public WebElement OKButton;
-    @FindBy(css = "div main div ul li:nth-child(1) div main div div button span")
+    @FindBy(css = "button.ant-btn.xsop-sdk-2-12-1-plugins-selectors-default--btn")
     public WebElement NoSpecOrder;
     @FindBy(css= "div:nth-child(1) div div div.xsop-sdk-2-10-5-components-solutionchunk--content.xsop-sdk-2-10-5-components-solutionchunk--enableimgchecker div p a")
     public WebElement MyOrders;
@@ -618,11 +618,11 @@ public class OpenCustomerCenter {
         Thread.sleep(3000);
         OrderSelector.sendKeys("147019663466881");
         Allure.step("Enter Order ID");
-        //OrderSelector.sendKeys(Keys.RETURN);
+        OrderSelector.sendKeys(Keys.RETURN);
         Thread.sleep(2000);
-        OKButton.click();
-        Allure.step("Click on OK button");
-        Thread.sleep(3000);
+        //OKButton.click();
+        //Allure.step("Click on OK button");
+        //Thread.sleep(3000);
         NoSpecOrder.click();
         Allure.step("Click on 'No Specific Order' button");
         Thread.sleep(3000);

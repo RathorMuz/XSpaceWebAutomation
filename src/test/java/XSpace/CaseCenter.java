@@ -52,7 +52,7 @@ public class CaseCenter {
     public WebElement Category;
     @FindBy(css = "#xspace-embedviewticket-search > div > div > div.wrapper > div > div > div.data-view > div.search-area > div.search-form > div:nth-child(1) > div:nth-child(4) > div > div.item-content > span > span > ul > li > span > input")
     public WebElement Categoryclick;
-    @FindBy(css = "//span[@class='ant-select-tree-title' and text()='testing_apo']")
+    @FindBy(xpath = "//span[@class='ant-select-tree-title' and text()='testing_apo']")
     public WebElement APOCategory;
     @FindBy(xpath = "li.ant-select-selection__choice span i.anticon svg")
     public WebElement CatRemoveicon;
