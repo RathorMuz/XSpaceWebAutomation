@@ -2,6 +2,7 @@ package XSpace;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
@@ -36,6 +37,16 @@ public class XSpace_Setup extends XSpace_Wait{
             //options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080", "--window-position=0,0", "--remote-allow-origins=*");
             //driver = new ChromeDriver(service, options);
             driver = new ChromeDriver(options);
+        }
+        else if (os.equalsIgnoreCase("windows 10")) {
+            //  WebDriverManager.chromedriver().setup();
+            WebDriverManager.chromedriver().clearDriverCache().setup();
+            ChromeDriverService service = ChromeDriverService.createDefaultService();
+            ChromeOptions options = new ChromeOptions();
+            options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+            options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+            options.addArguments("--headless","--remote-allow-origins=*");
+            driver = new ChromeDriver(service, options);
         }
         else {
 
